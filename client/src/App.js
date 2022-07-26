@@ -17,11 +17,11 @@ function App() {
     <Router>
       <>
         <Navbar />
-        <Switch>
-          <Route exact path='/' component={SearchBooks} />
-          <Route exact path='/saved' component={SavedBooks} />
-          <Route render={() => <h1 className='display-2'>Wrong page!</h1>} />
-        </Switch>
+        <Route>
+          <Route exact path='/' element={ <SearchBooks /> }/>
+          <Route exact path='/saved' element={ <SavedBooks /> }/>
+          <Route path="*" element={ <h1 className='display-2'>Wrong page!</h1> }/>
+          </Route>
       </>
     </Router>
     </ApolloProvider>
